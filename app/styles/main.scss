@@ -3,6 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -12,6 +13,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background: url("/images/whiteTree.jpg");
+  background-size: cover;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
