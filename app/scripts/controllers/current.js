@@ -23,9 +23,8 @@ angular.module('weatherAppApp')
         if (!$localStorage.savedCities){
             $localStorage.savedCities = [cityData];
         } else {
-            // We have already saved some cities.
             // Check to make sure we haven't already saved the current city.
-            var save = true; // Initialize the save decision variable.
+            var save = true;
             // Use this loop to check if we've already saved the city.
             for (var i=0; i < $localStorage.savedCities.length; i++){
                 if ($localStorage.savedCities[i].id == cityData.id) {
@@ -35,8 +34,16 @@ angular.module('weatherAppApp')
             }
             if (save==true){
                 $localStorage.savedCities.push(cityData);
+                // Add object to trigger messages
+                $scope.citySaved = {
+                  'success': true
+                };
             } else {
                 console.log('city already saved');
+                // Add object to trigger messages
+                $scope.citySaved = {
+                  'duplicate': true
+                };
             }
         }
     };
