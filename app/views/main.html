@@ -1,36 +1,26 @@
-<div class="jumbotron">
-  <h1>What's the weather?!</h1>
+<div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <h1>Weather for {{current.name}}</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <div ng-init="location='Seattle'">
+        <p>
+          <label for="location">Location:
+            <input type="text" name="location" ng-model="location">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get Current Weather</button>
+        </p>
+      <dl>
+        <dt>Currently</dt>
+        <dd>{{current.weather[0].main}}</dd>
+        <dd>{{current.weather[0].description}}</dd>
+        <dt>Temperature</dt>
+        <dd>{{current.main.temp}}</dd>
+        <dt>Wind</dt>
+        <dd>{{current.wind.speed}} mph at {{current.wind.deg}} degrees</dd>
+        <dt>Clouds</dt>
+        <dd>{{current.clouds.all}}%</dd>
+      </dl>
+    </div>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>Blah!</h4>
-  <p>
-    So they say.
-  </p>
-
-  <h4>Blah, blah!</h4>
-  <p>
-    Who says?
-  </p>
-
-  <h4>Blah, blah, blah!</h4>
-  <p>Not a clue!</p>
-</div>
-
-<div class="jumbotron">
-  <h3>Add 'em up!</h3>
-<div ng-app ng-init="firstnum=1;secondnum=2">
-  <input type="number" min="0" ng-model="firstnum">
-    plus
-  <input type="number" min="0" ng-model="secondnum">
-    equals
-  <b>{{firstnum + secondnum}}</b>
-  <p></p>
-  <p><button type="button" class="btn btn-success btn-sm">Woohoo!</button></p>
-</div>
 </div>
